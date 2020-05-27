@@ -9,9 +9,19 @@ const SignUpContainer = ({navigation}) => {
         title : '회원가입'
     })
 
+    const signUpCommand = () => {
+
+    }
+
+    const onChanged = text => {
+
+    }
+
 
     return (
-        <SignUpPresenter />
+        <SignUpPresenter
+            onChange={onChanged}
+        />
     )
 }
 

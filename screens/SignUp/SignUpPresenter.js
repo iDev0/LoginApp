@@ -24,13 +24,13 @@ const ButtonContainer = styled.View`
 `
 
 
-const SignUpPresenter = () => (
+const SignUpPresenter = ({onChange}) => (
     <Container>
         <FormContainer>
-            <CustomInput placeholder="First Name" />
-            <CustomInput placeholder="Last Name" />
-            <CustomInput placeholder="Email" />
-            <CustomInput placeholder="Password" />
+            <CustomInput placeholder="First Name" onChange={onChange} />
+            <CustomInput placeholder="Last Name" onChange={onChange} />
+            <CustomInput placeholder="Email" onChange={onChange} />
+            <CustomInput placeholder="Password" onChange={onChange} />
             <ButtonContainer>
                 <CustomButton text={'Sign Up'} command={() => console.log('Sign')} />
             </ButtonContainer>

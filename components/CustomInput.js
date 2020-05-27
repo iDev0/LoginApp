@@ -14,9 +14,9 @@ const Input = styled.TextInput`
   padding-left: 20px;
 `
 
-const CustomInput = ({placeholder}) => (
+const CustomInput = ({placeholder, onChange}) => (
     <Container>
-        <Input placeholder={placeholder} />
+        <Input placeholder={placeholder} onChange={onChange} />
     </Container>
 )
 
