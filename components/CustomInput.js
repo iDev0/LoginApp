@@ -14,15 +14,18 @@ const Input = styled.TextInput`
   padding-left: 20px;
 `
 
-const CustomInput = ({placeholder, onChange}) => (
+const CustomInput = ({placeholder, onChange, value, autoCapitalize, isPassword, onChangeText}) => (
     <Container>
-        <Input placeholder={placeholder} onChange={onChange} />
+        <Input
+            placeholder={placeholder}
+            onChangeText={onChangeText}
+            value={value}
+            autoCapitalize={autoCapitalize}
+            isPassword={isPassword}
+        />
     </Container>
 )
 
 
-CustomInput.propTypes = {
-
-};
 
 export default CustomInput;

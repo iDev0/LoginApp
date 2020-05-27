@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native'
-import {TouchableOpacity} from "react-native";
+import {TouchableOpacity, ActivityIndicator} from "react-native";
 import PropTypes from 'prop-types';
 
 const Container = styled.View`
@@ -25,11 +25,18 @@ const ButtonText = styled.Text`
   letter-spacing: 3px;
 `
 
-const CustomButton = ({backColor, fontColor, text, borderColor, command}) => (
+const CustomButton = ({backColor, fontColor, text, borderColor, command, loading}) => (
     <Container>
         <TouchableOpacity onPress={command}>
             <Button color={backColor} borderColor={borderColor}>
-                <ButtonText color={fontColor}>{text}</ButtonText>
+                { loading ? (
+                    <ButtonText color={fontColor}>
+                        <ActivityIndicator color={'white'} size={'small'}/>
+                    </ButtonText>
+                ) : (
+                    <ButtonText color={fontColor}>{text}</ButtonText>
+                ) }
+
             </Button>
         </TouchableOpacity>
     </Container>

@@ -24,23 +24,28 @@ const ButtonContainer = styled.View`
 `
 
 
-const SignUpPresenter = ({onChange}) => (
+const SignUpPresenter = ({firstName,
+                             lastName,
+                             email,
+                             password,
+                             loading,
+                             submit,
+                             setFirstName,
+                             setLastName,
+                             setEmail,
+                             setPassword
+                         }) => (
     <Container>
         <FormContainer>
-            <CustomInput placeholder="First Name" onChange={onChange} />
-            <CustomInput placeholder="Last Name" onChange={onChange} />
-            <CustomInput placeholder="Email" onChange={onChange} />
-            <CustomInput placeholder="Password" onChange={onChange} />
+            <CustomInput placeholder="First Name" value={firstName} autoCapitalize={'words'} onChangeText={setFirstName} />
+            <CustomInput placeholder="Last Name" value={lastName} autoCapitalize={'words'} onChangeText={setLastName} />
+            <CustomInput placeholder="Email"  value={email}  autoCapitalize={'none'} onChangeText={setEmail} />
+            <CustomInput placeholder="Password"  value={password} isPassword={true} onChangeText={setPassword} />
             <ButtonContainer>
-                <CustomButton text={'Sign Up'} command={() => console.log('Sign')} />
+                <CustomButton text={'Sign Up'} command={submit} loading={loading} />
             </ButtonContainer>
         </FormContainer>
     </Container>
 )
-
-
-SignUpPresenter.propTypes = {
-    
-};
 
 export default SignUpPresenter;
