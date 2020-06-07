@@ -25,13 +25,13 @@ const ButtonContainer = styled.View`
   margin-bottom: 80px;
 `
 
-const SignInPresenter = () => (
+const SignInPresenter = ({email, password, setPassword, setEmail, loading, submit}) => (
     <Container>
         <FormContainer>
-            <CustomInput placeholder="Email" />
-            <CustomInput placeholder="Password" />
+            <CustomInput placeholder="Email" value={email} onChangeText={setEmail} />
+            <CustomInput placeholder="Password" value={password} onChangeText={setPassword} />
             <ButtonContainer>
-                <CustomButton text={'Sign In'} command={() => console.log('Login')} />
+                <CustomButton text={'Sign In'} command={submit} loading={loading} />
             </ButtonContainer>
         </FormContainer>
     </Container>

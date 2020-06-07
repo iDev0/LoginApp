@@ -18,5 +18,5 @@ const callApi = async (method, path, data, jwt) => {
 
 export default {
     createAccount : form => callApi('post', '/users/register'),
-    login : form => callApi('post', '/users/login'),
+    login : form => callApi('post', '/users/login', form),
 }
