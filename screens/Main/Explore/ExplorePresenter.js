@@ -3,18 +3,18 @@ import styled from 'styled-components/native'
 import PropTypes from 'prop-types';
 
 const Container = styled.View``
-
 const Text = styled.Text``
 
-const Explore = () => (
+
+const ExplorePresenter = () => (
     <Container>
         <Text>Explore</Text>
     </Container>
 )
 
 
-Explore.propTypes = {
+ExplorePresenter.propTypes = {
     
 };
 
-export default Explore;
+export default ExplorePresenter;
