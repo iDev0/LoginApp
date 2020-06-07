@@ -1,18 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Stack from './navigations/Stack'
-import {NavigationContainer} from "@react-navigation/native";
-import {Provider} from "react-redux"
+import {Provider, useSelector, useDispatch} from "react-redux"
 import {PersistGate} from "redux-persist/integration/react";
 import store, {persistor} from './store';
+import Gate from "./navigations/Gate";
 
 
+const App = () => {
+    return (
+        <Provider store={store}>
+            <PersistGate persistor={persistor}>
+                <Gate/>
+            </PersistGate>
+        </Provider>
+    )
+}
 
-const App = () => (
-    <Provider store={store}>
-        <NavigationContainer>
-            <Stack/>
-        </NavigationContainer>
-    </Provider>
-)
 
 export default App;
