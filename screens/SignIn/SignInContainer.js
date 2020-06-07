@@ -9,6 +9,7 @@ import api from '../../api';
 import {userLogin} from '../../userReducer'
 import Input from '../../components/Input'
 import Btn from '../../components/Btn'
+import utils from "../../utils";
 
 const Container = styled.View`
   flex: 1;
@@ -39,6 +40,11 @@ const SignInContainer = ({navigation}) => {
     const handleSubmit = async() => {
 
         setLoading(true)
+
+        if (!utils.isEmail(email)) {
+            alert('올바른 이메일을 넣어주세요.')
+            return false
+        }
 
         try {
             dispatch(userLogin({
